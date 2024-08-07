@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dg</title>
+</head>
+
+<body>
+    <h1 id="currenttimeId" style="margin: 130px; margin-left: 350px; padding: 200px; color: tomato;">
+        Current Time
+    </h1>
+    <script>
+        var date = new Date()
+        var h = date.getHours()
+        var m = date.getMinutes()
+        var s = date.getSeconds()
+        var zone = 'am'
+
+        function dem() {
+            document.getElementById('currenttimeId').innerHTML = h + ':' + m + ':' + s + ' ' + zone
+        }
+        setInterval(function () {
+            s++
+            if (s == 60) {
+                s = 0;
+                // s<10 ? s='0' + s : s
+
+                if (h > 12) {
+                    zone = 'pm';
+                    h = h - 12
+                }
+
+                m++
+                if (m == 60) {
+                    m = 0
+                    h++
+                }
+            }
+            else {
+                s
+            }
+            dem()
+        }, 1000)
+    </script>
+</body>
+
+</html>
